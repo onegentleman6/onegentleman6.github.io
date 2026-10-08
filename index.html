@@ -1,51 +1,116 @@
 <!doctype html>
 <html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Кіно про нас — пісня-мультик у подарунок</title>
-<meta name="description" content="Персональна пісня з іменем рідної людини й мультфільм про вашу історію. Готово за добу · 799 грн.">
+<meta name="description" content="Студія «Кіно про нас»: персональна пісня з іменем рідної людини й мультфільм, де герої — ваші справжні рідні з ваших фото. Готово за добу · 799 грн.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Кіно про нас — пісня-мультик у подарунок">
+<meta property="og:description" content="Пісня з іменем рідної людини й мультфільм, де герої — ваші справжні рідні. 799 грн, готово за добу.">
+<meta property="og:image" content="icon-512.png">
 <style>
-  :root { --bg:#fbf6ec; --ink:#2a2118; --gold:#c9890f; --soft:#6b5a44; --card:#fff; }
-  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.6 "Segoe UI", system-ui, sans-serif; }
-  main { max-width:760px; margin:0 auto; padding:40px 18px 60px; }
-  h1 { font-family:Georgia, serif; font-style:italic; color:var(--gold); font-size:44px; line-height:1.1; margin:0 0 10px; }
-  .lead { font-size:21px; margin:0 0 26px; }
-  .card { background:var(--card); border-radius:16px; padding:20px 22px; margin:16px 0; box-shadow:0 2px 14px rgba(80,50,10,.08); }
-  h2 { font-family:Georgia, serif; color:var(--gold); font-size:26px; margin:0 0 8px; }
-  ol { padding-left:22px; } li { margin:6px 0; }
-  .btn { display:inline-block; background:#2aabee; color:#fff; text-decoration:none; font-weight:700; padding:14px 26px; border-radius:30px; font-size:19px; }
-  .price { font-size:28px; font-weight:700; } .soft { color:var(--soft); font-size:15px; }
+  :root { --bg:#fbf6ec; --ink:#2a2118; --gold:#c9890f; --soft:#6b5a44; --card:#fff; --line:#eadfcb; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:18px/1.6 "Segoe UI", system-ui, sans-serif; }
+  header { background:#2a2118; color:#fff; }
+  .bar { max-width:1000px; margin:0 auto; padding:12px 18px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .bar img { width:44px; height:44px; border-radius:50%; }
+  .bar b { font-family:Georgia, serif; font-style:italic; font-size:22px; color:#ffd86b; }
+  nav { margin-left:auto; display:flex; gap:16px; flex-wrap:wrap; font-size:15px; }
+  nav a { color:#f3e6cc; text-decoration:none; }
+  main { max-width:1000px; margin:0 auto; padding:30px 18px 50px; }
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; margin-bottom:24px; }
+  .hero img { width:100%; border-radius:18px; box-shadow:0 6px 24px rgba(80,50,10,.18); }
+  h1 { font-family:Georgia, serif; font-style:italic; color:var(--gold); font-size:46px; line-height:1.1; margin:0 0 12px; }
+  .lead { font-size:21px; margin:0 0 18px; }
+  h2 { font-family:Georgia, serif; color:var(--gold); font-size:28px; margin:0 0 10px; }
+  section { background:var(--card); border-radius:18px; padding:24px 26px; margin:20px 0; box-shadow:0 2px 14px rgba(80,50,10,.08); }
+  .btn { display:inline-block; background:#2aabee; color:#fff; text-decoration:none; font-weight:700; padding:14px 28px; border-radius:30px; font-size:19px; }
+  .price { font-size:30px; font-weight:700; margin:6px 0; }
+  .soft { color:var(--soft); font-size:15px; }
+  .grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; }
+  .ex figure { margin:0; } .ex img { width:100%; border-radius:14px; display:block; }
+  .ex figcaption { font-size:16px; margin-top:6px; color:var(--soft); }
+  .steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .step { border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  .step b { display:block; font-size:30px; color:var(--gold); font-family:Georgia, serif; }
+  details { border-bottom:1px solid var(--line); padding:10px 0; } summary { cursor:pointer; font-weight:600; }
+  ul.ok { padding-left:20px; } ul.ok li { margin:5px 0; }
   a { color:var(--gold); }
-  @media (max-width:520px) { h1 { font-size:34px; } }
-</style></head><body><main>
-<h1>Кіно про нас</h1>
-<p class="lead">Студія, яка пише пісню з іменем вашої рідної людини й малює мультфільм про вашу історію.</p>
+  footer { max-width:1000px; margin:0 auto; padding:10px 18px 40px; color:var(--soft); font-size:15px; }
+  @media (max-width:760px) { .hero, .grid, .steps { grid-template-columns:1fr; } h1 { font-size:34px; } nav { margin-left:0; } }
+</style></head><body>
+<header><div class="bar">
+  <img src="icon-512.png" alt="Кіно про нас"><b>Кіно про нас</b>
+  <nav><a href="#how">Як це працює</a><a href="#examples">Приклади</a><a href="#price">Ціна</a><a href="#faq">Питання</a><a href="#contacts">Контакти</a></nav>
+</div></header>
+<main>
 
-<div class="card">
-<h2>Пісня-мультик у подарунок</h2>
-<p>День народження, річниця, історія кохання, подяка мамі чи татові, казка про дитину, подарунок захиснику — ви розповідаєте про людину й надсилаєте фото, а ми пишемо пісню саме про неї й малюємо мультфільм, де герої — ваші справжні рідні.</p>
-<p class="price">799 грн · готово за добу</p>
-<p>Якщо щось не сподобається — переробимо безкоштовно.</p>
-<a class="btn" href="https://t.me/Kinopronas_bot?start=site">Замовити в Telegram</a>
+<div class="hero">
+  <div>
+    <h1>Пісня-мультик у подарунок</h1>
+    <p class="lead">Студія «Кіно про нас» пише пісню з іменем вашої рідної людини й малює мультфільм, де герої — ваші справжні рідні з ваших фото.</p>
+    <p class="price">799 грн · готово за добу</p>
+    <a class="btn" href="https://t.me/Kinopronas_bot?start=site">Замовити в Telegram</a>
+  </div>
+  <img src="ex-love.jpg" alt="Кадр із пісні-мультика: пара п'є каву на балконі">
 </div>
 
-<div class="card">
-<h2>Як це працює</h2>
-<ol>
-<li>Відповідаєте на кілька простих питань у Telegram-боті (можна голосом).</li>
-<li>Надсилаєте кілька фото — ми малюємо з них героїв мультфільму: це ваші справжні рідні.</li>
-<li>Протягом доби отримуєте пісню, мультфільм і версію для сторіс.</li>
-</ol>
-</div>
+<section id="how">
+  <h2>Як це працює</h2>
+  <div class="steps">
+    <div class="step"><b>1</b>Відповідаєте на кілька простих питань у нашому Telegram-боті — можна голосовим повідомленням.</div>
+    <div class="step"><b>2</b>Надсилаєте кілька фото. Ми малюємо з них героїв мультфільму, а гострайтер пише пісню саме про цю людину.</div>
+    <div class="step"><b>3</b>Протягом доби отримуєте пісню, мультфільм і окрему вертикальну версію для сторіс.</div>
+  </div>
+</section>
 
-<div class="card">
-<h2>Ми в соцмережах</h2>
-<p><a href="https://www.instagram.com/kino.pro.nas/">Instagram @kino.pro.nas</a> · <a href="https://www.facebook.com/profile.php?id=1267443576463198">Facebook</a> · <a href="https://t.me/kinopronas_vidguky">Відгуки клієнтів</a></p>
-</div>
+<section id="examples">
+  <h2>Приклади</h2>
+  <p class="soft">Кадри з наших рекламних пісень-мультиків. Герої — вигадана родина студії; у вашому мультфільмі будуть ваші рідні.</p>
+  <div class="grid ex">
+    <figure><img src="ex-bday.jpg" alt="День народження: брат і сестричка за святковим тортом"><figcaption>🎂 День народження — пісня для сина від батьків</figcaption></figure>
+    <figure><img src="ex-love.jpg" alt="Коханій людині: ранкова кава на балконі"><figcaption>❤️ Коханій людині — історія пари</figcaption></figure>
+    <figure><img src="ex-wed.jpg" alt="Весілля: наречені під квітковою аркою"><figcaption>💒 Весілля — подарунок молодятам</figcaption></figure>
+    <figure><img src="ex-mil.jpg" alt="Захиснику: родина вдома з малюнком від племінника"><figcaption>🇺🇦 Захиснику чи захисниці — пісня від родини</figcaption></figure>
+  </div>
+</section>
 
-<div class="card" id="app">
-<h2>KinoProNas Publisher</h2>
-<p><b>KinoProNas Publisher</b> — застосунок студії «Кіно про нас», який публікує власні відео студії на її власних сторінках: YouTube, TikTok, Instagram і Facebook. Дані користувачів не збирає.</p>
-<p class="soft"><b>KinoProNas Publisher</b> is the publishing app of the studio "Kino pro nas". It uploads the studio's own videos to the studio's own YouTube, TikTok, Instagram and Facebook accounts and does not collect user data. <a href="privacy.html#en">Privacy Policy &amp; Terms</a></p>
-</div>
+<section id="price">
+  <h2>Ціна й гарантії</h2>
+  <p class="price">799 грн</p>
+  <ul class="ok">
+    <li>Персональна пісня (текст і запис) + мультфільм на всю пісню + версія для сторіс.</li>
+    <li>Готово протягом 24 годин після оплати.</li>
+    <li>Правки безкоштовно — рядок пісні, сцену чи героя, доки результат вас не влаштує.</li>
+    <li>Не встигли вчасно — повертаємо гроші.</li>
+    <li>Оплата карткою або зірками Telegram.</li>
+  </ul>
+  <a class="btn" href="https://t.me/Kinopronas_bot?start=site_price">Замовити</a>
+</section>
 
-<p class="soft"><a href="privacy.html">Політика конфіденційності та умови</a> · Студія «Кіно про нас», Україна</p>
-</main></body></html>
+<section id="faq">
+  <h2>Питання</h2>
+  <details><summary>Які фото потрібні?</summary><p>3–8 звичайних фото, де добре видно обличчя. Можна старі чи знімки з телефона.</p></details>
+  <details><summary>На які приводи ви робите пісню-мультик?</summary><p>День народження, подарунок коханій людині, весілля, подяка захиснику чи захисниці.</p></details>
+  <details><summary>Можна щось змінити після готовності?</summary><p>Так, безкоштовно: напишіть у підтримку бота, що змінити, — і студія виправить.</p></details>
+  <details><summary>Чи публікуєте ви роботи клієнтів?</summary><p>Ні. Мультфільми клієнтів — лише для вас; у рекламі ми показуємо тільки вигаданих героїв студії.</p></details>
+  <details><summary>Що, якщо в мене немає Telegram?</summary><p>Напишіть нам в Instagram або Facebook — допоможемо оформити замовлення.</p></details>
+</section>
+
+<section id="contacts">
+  <h2>Контакти</h2>
+  <p>Замовлення й підтримка: <a href="https://t.me/Kinopronas_bot?start=site_contacts">Telegram @Kinopronas_bot</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/kino.pro.nas/">@kino.pro.nas</a> · Facebook: <a href="https://www.facebook.com/profile.php?id=1267443576463198">Кіно про нас</a> · Відгуки клієнтів: <a href="https://t.me/kinopronas_vidguky">@kinopronas_vidguky</a></p>
+  <p class="soft">Студія «Кіно про нас», Україна.</p>
+</section>
+
+<section id="app">
+  <h2>KinoProNas Publisher</h2>
+  <p><b>KinoProNas Publisher</b> — застосунок студії «Кіно про нас», який публікує власні відео студії на її власних сторінках: YouTube, TikTok, Instagram і Facebook. Дані користувачів не збирає.</p>
+  <p class="soft"><b>KinoProNas Publisher</b> is the publishing app of the studio "Kino pro nas". It uploads the studio's own videos to the studio's own YouTube, TikTok, Instagram and Facebook accounts and does not collect user data. <a href="privacy.html#en">Privacy Policy &amp; Terms of Service</a></p>
+</section>
+</main>
+<footer><a href="privacy.html">Політика конфіденційності</a> · <a href="privacy.html#terms">Умови використання</a> · <a href="privacy.html#en">Privacy Policy &amp; Terms (EN)</a> · © 2026 Студія «Кіно про нас»</footer>
+</body></html>
